@@ -22,7 +22,7 @@
                 </fieldset>
                 <fieldset>
                     <label for="email">Имейл</label>
-                    <input type="text" id="email" name="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="email@example.com" required />
+                    <input type="text" id="email" name="email" pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,6}$" placeholder="email@example.com" required />
                     <label id="email_error" class="error"></label>
                 </fieldset>
                 <fieldset>
@@ -37,10 +37,10 @@
                     <label for="street">Улица</label>
                     <input type="text" id="street" name="street" placeholder="ул. Улицова" />
                     <label for="postcode">Пощенски код</label>
-                    <input type="text" id="postcode" name="postcode" placeholder="12345-1234" />
+                    <input type="text" id="postcode" name="postcode" placeholder="12345-1234" pattern="^[0-9]{5}-[0-9]{4}$" />
                     <label id="address_error" class="error"></label>
                 </fieldset>
-                <button type="submit" id="submit" name="submit">Регистрация</button>
+                <button type="button" id="submit" name="submit">Регистрация</button>
             </form>
         </main>
     </body>
