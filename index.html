@@ -7,8 +7,27 @@
     </head>
     <body>
         <main class="content">
-            <h1>Регистрация</h1>
-            <p><em>TODO</em></p>
+            <form action="#" method="post">
+                <legend>Регистрация</legend>
+                <fieldset>
+                    <label for="username">Потребителско име</label>
+                    <input type="text" id="username" name="username" placeholder="gosho_goshev" required />
+                </fieldset>
+                <fieldset>
+                    <label for="names">Име и фамилия</label>
+                    <input type="text" id="names" name="names" placeholder="Георги Георгиев" required />
+                </fieldset>
+                <fieldset>
+                    <label for="email">Имейл</label>
+                    <input type="text" id="email" name="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="email@example.com" required />
+                </fieldset>
+                <fieldset>
+                    <label for="password">Парола</label>
+                    <input type="password" id="password" name="password" placeholder="Напишете Вашата парола тук..." required />
+                </fieldset>
+                <!-- TODO: Add optional fields -->
+                <button type="submit" name="Регистрация"></button>
+            </form>
         </main>
     </body>
 </html>
