@@ -15,6 +15,7 @@ function onSubmit() {
     let passwordErrorLabel = document.getElementById("password_error");
     let addressErrorLabel = document.getElementById("address_error");
 
+    // Validation
     let username = usernameField.value;
     if (!username || username.length < 3 || username.length > 10) {
         usernameErrorLabel.textContent = "Моля въведете потребителско име съдържащо между 3 и 10 символа!";
@@ -62,7 +63,26 @@ function onSubmit() {
         addressErrorLabel.textContent = "";
     }
 
-    console.log("yes");
+    // Request
+
+    fetch('https://jsonplaceholder.typicode.com/users', {
+        method: 'GET'
+    })
+    .then(data => data.json())
+    .then(result => result.filter(user => user.username === username).length === 0)
+    .then(userNameAvailable => {
+        let label = document.getElementById("request_label");
+        label.textContent = userNameAvailable ? "Успешно направихте своята регистрация." : "Вече съществува такова потребителско име! Моля изберете ново.";
+        label.classList.remove(userNameAvailable ? "error" : "success");
+        label.classList.add(userNameAvailable ? "success" : "error")
+        if (!userNameAvailable) {
+            usernameField.focus();
+        }
+    })
+    .catch(error => {
+        console.error(error);
+        document.getElementById("request_error").value = "Възникна грешка! Моля опитайте пак по-късно.";
+    });
 }
 
 (function () {

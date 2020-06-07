@@ -36,6 +36,14 @@ body {
     margin: auto;
 }
 
+.success {
+    color: green;
+}
+
 .error {
     color: red;
+}
+
+#request_label {
+    text-align: center;
 }
