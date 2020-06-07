@@ -13,18 +13,22 @@
                 <fieldset>
                     <label for="username">Потребителско име</label>
                     <input type="text" id="username" name="username" placeholder="gosho_goshev" required />
+                    <label id="username_error" class="error"></label>
                 </fieldset>
                 <fieldset>
                     <label for="names">Име и фамилия</label>
                     <input type="text" id="names" name="names" placeholder="Георги Георгиев" required />
+                    <label id="names_error" class="error"></label>
                 </fieldset>
                 <fieldset>
                     <label for="email">Имейл</label>
                     <input type="text" id="email" name="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="email@example.com" required />
+                    <label id="email_error" class="error"></label>
                 </fieldset>
                 <fieldset>
                     <label for="password">Парола</label>
                     <input type="password" id="password" name="password" placeholder="Напишете Вашата парола тук..." required />
+                    <label id="password_error" class="error"></label>
                 </fieldset>
                 <fieldset>
                     <label>Адрес (незадължително):</label>
@@ -34,6 +38,7 @@
                     <input type="text" id="street" name="street" placeholder="ул. Улицова" />
                     <label for="postcode">Пощенски код</label>
                     <input type="text" id="postcode" name="postcode" placeholder="12345-1234" />
+                    <label id="address_error" class="error"></label>
                 </fieldset>
                 <button type="submit" id="submit" name="submit">Регистрация</button>
             </form>
